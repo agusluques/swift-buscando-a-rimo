@@ -13,20 +13,17 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         if emojiMemoryGame.isGameCreated {
             VStack {
-                Text("Encontrando a Rimo")
-                HStack {
-                    Text("Theme: \(emojiMemoryGame.selectedTheme!.name)")
-                    Spacer()
-                    Text("Score: \(emojiMemoryGame.score)")
-                }.padding()
+                Text("Theme: \(emojiMemoryGame.selectedTheme!.name)")
                 Grid(emojiMemoryGame.cards) { card in
                         CardView(card: card).onTapGesture {
                             emojiMemoryGame.choose(card: card)
                         }
                         .padding(5)
                     }
-                .foregroundColor(emojiMemoryGame.selectedTheme!.color);
+                Text("Score: \(emojiMemoryGame.score)")
             }
+                .font(.largeTitle)
+                .foregroundColor(emojiMemoryGame.selectedTheme!.color);
         } else {
             Button("New Game", action: {emojiMemoryGame.createMemoryGame()})
                 .font(.largeTitle)
@@ -39,26 +36,20 @@ struct CardView: View  {
     var card: MemoryGame<String>.Card
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-                    RoundedRectangle(cornerRadius: cornerRadius).stroke()
-                    Text(card.content)
-                } else {
-                    if !card.isMatched {
-                        RoundedRectangle(cornerRadius: cornerRadius).fill();
-                    }
+        if card.isFaceUp || !card.isMatched {
+            GeometryReader { geometry in
+                ZStack {
+                    Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(20), clockwise: true).padding(5).opacity(circleOpacity)
+                    Text(card.content).font(.system(size: fontSize(for: geometry.size)))
                 }
+                .cardify(isFaceUp: card.isFaceUp)
             }
-            .font(.system(size: fontSize(for: geometry.size)));
         }
-        
     }
     
     // MARK: - Drawing Constants
-    private let cornerRadius: CGFloat = 25.0
-    private let fontScaleFactor: CGFloat = 0.75
+    private let fontScaleFactor: CGFloat = 0.7
+    private let circleOpacity: Double = 0.4
 
     private func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaleFactor;
@@ -67,6 +58,9 @@ struct CardView: View  {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView(emojiMemoryGame: EmojiMemoryGame())
+        let game = EmojiMemoryGame()
+        game.createMemoryGame()
+        game.choose(card: game.cards[0])
+        return EmojiMemoryGameView(emojiMemoryGame: game)
     }
 }
