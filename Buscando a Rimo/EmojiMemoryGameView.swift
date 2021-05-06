@@ -14,6 +14,7 @@ struct EmojiMemoryGameView: View {
         if emojiMemoryGame.isGameCreated {
             VStack {
                 Text("Theme: \(emojiMemoryGame.selectedTheme!.name)")
+                Button("Reset Game", action: {emojiMemoryGame.createMemoryGame()}).font(.title).foregroundColor(.red)
                 Grid(emojiMemoryGame.cards) { card in
                         CardView(card: card).onTapGesture {
                             emojiMemoryGame.choose(card: card)
@@ -41,6 +42,8 @@ struct CardView: View  {
                 ZStack {
                     Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(20), clockwise: true).padding(5).opacity(circleOpacity)
                     Text(card.content).font(.system(size: fontSize(for: geometry.size)))
+                        .rotationEffect(.degrees(card.isMatched ? 360 : 0))
+                        .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
                 }
                 .cardify(isFaceUp: card.isFaceUp)
             }

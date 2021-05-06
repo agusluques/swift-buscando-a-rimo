@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F445B585263B4D0900FE58E9"
-               BuildableName = "Buscando a Rimo.app"
-               BlueprintName = "Buscando a Rimo"
-               ReferencedContainer = "container:Buscando a Rimo.xcodeproj">
+               BuildableName = "Rimo.app"
+               BlueprintName = "Rimo"
+               ReferencedContainer = "container:Rimo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F445B585263B4D0900FE58E9"
-            BuildableName = "Buscando a Rimo.app"
-            BlueprintName = "Buscando a Rimo"
-            ReferencedContainer = "container:Buscando a Rimo.xcodeproj">
+            BuildableName = "Rimo.app"
+            BlueprintName = "Rimo"
+            ReferencedContainer = "container:Rimo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F445B585263B4D0900FE58E9"
-            BuildableName = "Buscando a Rimo.app"
-            BlueprintName = "Buscando a Rimo"
-            ReferencedContainer = "container:Buscando a Rimo.xcodeproj">
+            BuildableName = "Rimo.app"
+            BlueprintName = "Rimo"
+            ReferencedContainer = "container:Rimo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

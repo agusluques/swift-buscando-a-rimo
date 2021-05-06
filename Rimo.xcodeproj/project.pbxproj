@@ -10,7 +10,7 @@
 		F4115C7F263C57510044EA15 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4115C7E263C57510044EA15 /* MemoryGame.swift */; };
 		F4115C81263C597C0044EA15 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4115C80263C597C0044EA15 /* EmojiMemoryGame.swift */; };
 		F440D867263D8B0700C006A7 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440D866263D8B0700C006A7 /* Grid.swift */; };
-		F445B58A263B4D0900FE58E9 /* Encontrando_a_RimoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445B589263B4D0900FE58E9 /* Encontrando_a_RimoApp.swift */; };
+		F445B58A263B4D0900FE58E9 /* Buscando_a_RimoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445B589263B4D0900FE58E9 /* Buscando_a_RimoApp.swift */; };
 		F445B58C263B4D0900FE58E9 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445B58B263B4D0900FE58E9 /* EmojiMemoryGameView.swift */; };
 		F445B58E263B4D0B00FE58E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F445B58D263B4D0B00FE58E9 /* Assets.xcassets */; };
 		F445B591263B4D0B00FE58E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F445B590263B4D0B00FE58E9 /* Preview Assets.xcassets */; };
@@ -25,8 +25,8 @@
 		F4115C7E263C57510044EA15 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		F4115C80263C597C0044EA15 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		F440D866263D8B0700C006A7 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		F445B586263B4D0900FE58E9 /* Buscando a Rimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buscando a Rimo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F445B589263B4D0900FE58E9 /* Encontrando_a_RimoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encontrando_a_RimoApp.swift; sourceTree = "<group>"; };
+		F445B586263B4D0900FE58E9 /* Rimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F445B589263B4D0900FE58E9 /* Buscando_a_RimoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buscando_a_RimoApp.swift; sourceTree = "<group>"; };
 		F445B58B263B4D0900FE58E9 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		F445B58D263B4D0B00FE58E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F445B590263B4D0B00FE58E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		F445B587263B4D0900FE58E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F445B586263B4D0900FE58E9 /* Buscando a Rimo.app */,
+				F445B586263B4D0900FE58E9 /* Rimo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,7 +73,7 @@
 				F4115C80263C597C0044EA15 /* EmojiMemoryGame.swift */,
 				F4D8AF532640AE4F00826E2C /* Cardify.swift */,
 				F4D8AF512640A56000826E2C /* Pie.swift */,
-				F445B589263B4D0900FE58E9 /* Encontrando_a_RimoApp.swift */,
+				F445B589263B4D0900FE58E9 /* Buscando_a_RimoApp.swift */,
 				F445B58B263B4D0900FE58E9 /* EmojiMemoryGameView.swift */,
 				F440D866263D8B0700C006A7 /* Grid.swift */,
 				F44870AA263D9D6800FDA54C /* Array+Identifiable.swift */,
@@ -96,9 +96,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F445B585263B4D0900FE58E9 /* Buscando a Rimo */ = {
+		F445B585263B4D0900FE58E9 /* Rimo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F445B595263B4D0B00FE58E9 /* Build configuration list for PBXNativeTarget "Buscando a Rimo" */;
+			buildConfigurationList = F445B595263B4D0B00FE58E9 /* Build configuration list for PBXNativeTarget "Rimo" */;
 			buildPhases = (
 				F445B582263B4D0900FE58E9 /* Sources */,
 				F445B583263B4D0900FE58E9 /* Frameworks */,
@@ -108,9 +108,9 @@
 			);
 			dependencies = (
 			);
-			name = "Buscando a Rimo";
+			name = Rimo;
 			productName = "Encontrando a Rimo";
-			productReference = F445B586263B4D0900FE58E9 /* Buscando a Rimo.app */;
+			productReference = F445B586263B4D0900FE58E9 /* Rimo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F445B581263B4D0900FE58E9 /* Build configuration list for PBXProject "Buscando a Rimo" */;
+			buildConfigurationList = F445B581263B4D0900FE58E9 /* Build configuration list for PBXProject "Rimo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F445B585263B4D0900FE58E9 /* Buscando a Rimo */,
+				F445B585263B4D0900FE58E9 /* Rimo */,
 			);
 		};
 /* End PBXProject section */
@@ -164,7 +164,7 @@
 			files = (
 				F4115C7F263C57510044EA15 /* MemoryGame.swift in Sources */,
 				F445B58C263B4D0900FE58E9 /* EmojiMemoryGameView.swift in Sources */,
-				F445B58A263B4D0900FE58E9 /* Encontrando_a_RimoApp.swift in Sources */,
+				F445B58A263B4D0900FE58E9 /* Buscando_a_RimoApp.swift in Sources */,
 				F4D8AF522640A56000826E2C /* Pie.swift in Sources */,
 				F44870A9263D961E00FDA54C /* GridLayout.swift in Sources */,
 				F440D867263D8B0700C006A7 /* Grid.swift in Sources */,
@@ -301,6 +301,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Buscando a Rimo/Preview Content\"";
+				DEVELOPMENT_TEAM = U9BJWMSWZD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Buscando a Rimo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -322,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Buscando a Rimo/Preview Content\"";
+				DEVELOPMENT_TEAM = U9BJWMSWZD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Buscando a Rimo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -339,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F445B581263B4D0900FE58E9 /* Build configuration list for PBXProject "Buscando a Rimo" */ = {
+		F445B581263B4D0900FE58E9 /* Build configuration list for PBXProject "Rimo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F445B593263B4D0B00FE58E9 /* Debug */,
@@ -348,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F445B595263B4D0B00FE58E9 /* Build configuration list for PBXNativeTarget "Buscando a Rimo" */ = {
+		F445B595263B4D0B00FE58E9 /* Build configuration list for PBXNativeTarget "Rimo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F445B596263B4D0B00FE58E9 /* Debug */,
