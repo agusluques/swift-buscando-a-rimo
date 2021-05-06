@@ -14,10 +14,16 @@ struct EmojiMemoryGameView: View {
         if emojiMemoryGame.isGameCreated {
             VStack {
                 Text("Theme: \(emojiMemoryGame.selectedTheme!.name)")
-                Button("Reset Game", action: {emojiMemoryGame.createMemoryGame()}).font(.title).foregroundColor(.red)
+                Button("Reset Game", action: {
+                    withAnimation(.easeInOut(duration: 1)) {
+                        emojiMemoryGame.createMemoryGame()
+                    }
+                }).font(.title).foregroundColor(.red)
                 Grid(emojiMemoryGame.cards) { card in
                         CardView(card: card).onTapGesture {
-                            emojiMemoryGame.choose(card: card)
+                            withAnimation(.linear(duration: 1)) {
+                                emojiMemoryGame.choose(card: card)
+                            }
                         }
                         .padding(5)
                     }
@@ -46,7 +52,7 @@ struct CardView: View  {
                         .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
                 }
                 .cardify(isFaceUp: card.isFaceUp)
-            }
+            }.transition(.scale)
         }
     }
     
