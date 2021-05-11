@@ -15,13 +15,13 @@ struct EmojiMemoryGameView: View {
             VStack {
                 Text("Theme: \(emojiMemoryGame.selectedTheme!.name)")
                 Button("Reset Game", action: {
-                    withAnimation(.easeInOut(duration: 1)) {
+                    withAnimation(.easeInOut) {
                         emojiMemoryGame.createMemoryGame()
                     }
                 }).font(.title).foregroundColor(.red)
                 Grid(emojiMemoryGame.cards) { card in
                         CardView(card: card).onTapGesture {
-                            withAnimation(.linear(duration: 1)) {
+                            withAnimation(.linear(duration: flipCardDuration)) {
                                 emojiMemoryGame.choose(card: card)
                             }
                         }
@@ -35,24 +35,46 @@ struct EmojiMemoryGameView: View {
             Button("New Game", action: {emojiMemoryGame.createMemoryGame()})
                 .font(.largeTitle)
         }
-        
     }
+    
+    // MARK: - Drawing Constants
+    private let flipCardDuration: Double = 0.5
 }
 
 struct CardView: View  {
     var card: MemoryGame<String>.Card
+    
+    @State private var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
 
     var body: some View {
-        if card.isFaceUp || !card.isMatched {
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            if card.isFaceUp || !card.isMatched {
                 ZStack {
-                    Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(20), clockwise: true).padding(5).opacity(circleOpacity)
+                    Group {
+                        if card.isConsumingBonusTime {
+                            Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(-animatedBonusRemaining*360-90), clockwise: true)
+                                .onAppear {
+                                    startBonusTimeAnimation()
+                                }
+                        } else {
+                            Pie(startAngle: Angle.degrees(-90), endAngle: Angle.degrees(-card.bonusRemaining*360-90), clockwise: true)
+                                .foregroundColor(.yellow);
+                        }
+                    }.padding(5).opacity(circleOpacity)
                     Text(card.content).font(.system(size: fontSize(for: geometry.size)))
                         .rotationEffect(.degrees(card.isMatched ? 360 : 0))
                         .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
                 }
                 .cardify(isFaceUp: card.isFaceUp)
-            }.transition(.scale)
+                .transition(.scale)
+            }
         }
     }
     
@@ -64,6 +86,7 @@ struct CardView: View  {
         min(size.width, size.height) * fontScaleFactor;
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
